@@ -1,0 +1,29 @@
+﻿<Window x:Class="M03Mandelbrot.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:M03Mandelbrot"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="525" Width="525">
+    <Grid Name="pnlRoot" >
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="45"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Canvas Grid.Row="0" Name="cvsMandel" Margin="10" Grid.RowSpan="2" MouseMove="cvsMandel_MouseMove" MouseLeftButtonUp="cvsMandel_MouseLeftButtonUp" MouseLeftButtonDown="cvsMandel_MouseLeftButtonDown">
+            <Image Height="400" Width="400"
+                Name="drawImage" 
+                Canvas.Left="0" Canvas.Top="0" />
+        </Canvas>
+        <StackPanel Grid.Row="1"  Orientation="Horizontal" Height="35">
+            <Button Name="btnRedraw" Height="23"  HorizontalAlignment="Center" Margin="28,12,0,0" 
+                    Content="Redraw" Click="btnRedraw_Click"/>
+            <Button Name="btnQuit" Height="23"  HorizontalAlignment="Center" Margin="28,12,0,0" Content="Quit" Click="btnQuit_Click"/>
+            <TextBlock Name="tbWorking" Text="" Width="300" Margin="28,12,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        </StackPanel>
+     </Grid>
+</Window>
